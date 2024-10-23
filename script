@@ -1,0 +1,27 @@
+const gifts = {
+    presente1: {
+        image: 'link_da_imagem_1.jpg',
+        price: 'R$ 100,00'
+    },
+    // Adicione mais presentes conforme necessário
+};
+
+function openModal(gift) {
+    const modal = document.getElementById('modal');
+    const giftImage = document.getElementById('gift-image');
+    const giftPrice = document.getElementById('gift-price');
+
+    giftImage.src = gifts[gift].image;
+    giftPrice.textContent = gifts[gift].price;
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById('modal').style.display = "none";
+}
+
+function reserveGift() {
+    // Lógica para reservar o presente
+    alert("Presente reservado! Aguarde a confirmação do pagamento.");
+    closeModal();
+}
